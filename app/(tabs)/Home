@@ -1,0 +1,136 @@
+import React from 'react';
+import { View, Text, StyleSheet, ScrollView, Button, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons'; // Mengimpor pustaka ikon
+
+const Home = () => {
+  return (
+    <ScrollView style={styles.container}>
+      {/* Header */}
+      <View style={styles.header}>
+        <Text style={styles.title}>Kasir Jahit</Text>
+        <Text style={styles.subtitle}>Kelola pesanan dan pembayaran dengan mudah</Text>
+      </View>
+
+      {/* Informasi Penjualan */}
+      <View style={styles.salesInfoSection}>
+        <Text style={styles.sectionTitle}>Informasi Penjualan</Text>
+        <View style={styles.infoCardsContainer}>
+          <View style={styles.infoCard}>
+            <Text style={styles.infoCardTitle}>Pesanan</Text>
+            <Text style={styles.infoCardValue}>25</Text>
+          </View>
+          <View style={styles.infoCard}>
+            <Text style={styles.infoCardTitle}>Pendapatan</Text>
+            <Text style={styles.infoCardValue}>Rp 5.000.000</Text>
+          </View>
+        </View>
+      </View>
+
+      {/* Kategori Layanan */}
+      <View style={styles.categoriesSection}>
+        <Text style={styles.sectionTitle}>Kategori Layanan</Text>
+        <View style={styles.categoriesContainer}>
+          <TouchableOpacity style={styles.categoryCard} onPress={() => alert('Pesanan Baru')}>
+            <Icon name="add-shopping-cart" size={40} color="#007BFF" />
+            <Text style={styles.categoryText}>Pesanan Baru</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.categoryCard} onPress={() => alert('Pesanan Diproses')}>
+            <Icon name="autorenew" size={40} color="#007BFF" />
+            <Text style={styles.categoryText}>Pesanan Diproses</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.categoryCard} onPress={() => alert('Riwayat Pesanan')}>
+            <Icon name="history" size={40} color="#007BFF" />
+            <Text style={styles.categoryText}>Riwayat Pesanan</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      {/* Tombol Aksi */}
+      <View style={styles.actionsSection}>
+        <Button title="Tambah Pesanan" onPress={() => alert('Tambah Pesanan')} color="#007BFF" />
+      </View>
+    </ScrollView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FAFAFA',
+  },
+  header: {
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: '#007BFF',
+  },
+  title: {
+    fontSize: 24,
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  subtitle: {
+    fontSize: 14,
+    color: 'white',
+    marginTop: 5,
+  },
+  salesInfoSection: {
+    padding: 20,
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 10,
+  },
+  infoCardsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  infoCard: {
+    backgroundColor: 'white',
+    borderRadius: 8,
+    padding: 15,
+    width: '48%',
+    alignItems: 'center',
+    elevation: 1,
+  },
+  infoCardTitle: {
+    fontSize: 14,
+    color: '#555',
+  },
+  infoCardValue: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#007BFF',
+    marginTop: 5,
+  },
+  categoriesSection: {
+    padding: 20,
+  },
+  categoriesContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    gap: 10,
+  },
+  categoryCard: {
+    backgroundColor: 'white',
+    borderRadius: 8,
+    width: '30%',
+    alignItems: 'center',
+    elevation: 1,
+    padding: 10,
+  },
+  categoryText: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#333',
+    marginTop: 10,
+  },
+  actionsSection: {
+    padding: 20,
+    alignItems: 'center',
+  },
+});
+
+export default Home;

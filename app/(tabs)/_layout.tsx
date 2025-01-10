@@ -6,29 +6,38 @@ export default () => {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: '#FF4500', // Warna ikon saat aktif
-        tabBarInactiveTintColor: '#808080', // Warna ikon saat tidak aktif
+        tabBarActiveTintColor: '#007BFF', // Hijau gelap untuk tab yang aktif
+        tabBarInactiveTintColor: '#8B8B8B', // Abu-abu terang untuk tab yang tidak aktif
+        tabBarStyle: {
+          backgroundColor: '#FAFAFA', // Latar belakang beige
+        },
       }}
     >
-      {/* Halaman Home dengan Tab Navigasi */}
       <Tabs.Screen
         name="home"
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home" size={size} color={color} />
+            <Ionicons name="home" size={size} color={color} /> // Ikon standar Home
           ),
-          title: 'Home', // Menyesuaikan judul tab
+          title: 'Home', // Nama tab untuk halaman utama
         }}
       />
-
-      {/* Halaman Produk dengan Tab Navigasi */}
       <Tabs.Screen
-        name="produk"
+        name="products"
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="fast-food" size={size} color={color} />
+            <Ionicons name="bag" size={size} color={color} /> // Ikon untuk produk
           ),
-          title: 'Produk', // Menyesuaikan judul tab
+          title: 'Produk', // Nama tab untuk produk (kain, alat jahit, dll)
+        }}
+      />
+      <Tabs.Screen
+        name="transactions"
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="cash" size={size} color={color} /> // Ikon untuk transaksi
+          ),
+          title: 'Transaksi', // Nama tab untuk transaksi kasir
         }}
       />
     </Tabs>
